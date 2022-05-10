@@ -4,7 +4,7 @@ const FetchAPI = () => {
   const fetchPost = async () => {
     const data = await fetch('https://jsonplaceholder.typicode.com/posts')
     const response = await data.json()
-    console.log(response)
+    // console.log(response)
   }
   fetchPost()
   return (
