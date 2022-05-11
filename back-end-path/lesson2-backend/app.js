@@ -8,7 +8,7 @@ app.set('views', path.join(__dirname, 'src/views'))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  return res.send('Hello World')
+  return res.render('index')
 })
 
 const port = 5000
