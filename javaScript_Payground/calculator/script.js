@@ -11,6 +11,7 @@ const state = {
 const renderResult = () => {
   document.querySelector('.screen-result').innerHTML = state.result
 }
+
 const renderHistory = () => {
   document.querySelector('.screen-history').innerHTML = state.history
     .map((historyItem) => `<div class="screen-operation">${historyItem}</div>`)
@@ -31,7 +32,7 @@ const renderCurrentOperationOperator = () => {
 
 renderResult()
 
-document.querySelectorAll('.operand').forEach((operand_button) => {
+document.querySelectorAll('.operands').forEach((operand_button) => {
   operand_button.addEventListener('click', () => {
     if (state.currentOperation.operator !== '') {
       state.currentOperation['2ndOperands'] += operand_button.textContent // set to state
@@ -60,8 +61,43 @@ document.querySelector('.equals').addEventListener('click', () => {
 
     const operation = `${state.currentOperation['1stOperands']} ${state.currentOperation.operator} ${state.currentOperation['2ndOperands']} = ${state.result}`
     state.history.push(operation) // set to state
+  } else if (state.currentOperation.operator == '-') {
+    state.result =
+      Number(state.currentOperation['1stOperands']) -
+      Number(state.currentOperation['2ndOperands']) // set to state
+
+    const operation = `${state.currentOperation['1stOperands']} ${state.currentOperation.operator} ${state.currentOperation['2ndOperands']} = ${state.result}`
+    state.history.push(operation) // set to state
+  } else if (state.currentOperation.operator == '*') {
+    state.result =
+      Number(state.currentOperation['1stOperands']) *
+      Number(state.currentOperation['2ndOperands']) // set to state
+
+    const operation = `${state.currentOperation['1stOperands']} ${state.currentOperation.operator} ${state.currentOperation['2ndOperands']} = ${state.result}`
+    state.history.push(operation) // set to state
+  } else {
+    state.result =
+      Number(state.currentOperation['1stOperands']) /
+      Number(state.currentOperation['2ndOperands']) // set to state
+
+    const operation = `${state.currentOperation['1stOperands']} ${state.currentOperation.operator} ${state.currentOperation['2ndOperands']} = ${state.result}`
+    state.history.push(operation) // set to state
   }
 
   renderResult()
   renderHistory()
+})
+
+document.querySelector('.ac').addEventListener('click', () => {
+  state.result = 0
+  renderResult()
+
+  state.currentOperation = {
+    '1stOperands': '',
+    '2ndOperands': '',
+    operator: '',
+  }
+  render1stCurrentOperationOperand()
+  render2ndCurrentOperationOperand()
+  renderCurrentOperationOperator()
 })
