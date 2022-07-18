@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Intro from '../components/Intro'
 import styles from '../styles/Home.module.css'
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      this is homepage
+      <Intro />
     </div>
   )
 }
