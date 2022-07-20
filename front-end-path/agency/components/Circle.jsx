@@ -1,5 +1,5 @@
-const Circle = () => {
-  return <div className='circle' />
+const Circle = (props) => {
+  return <div className='circle' style={{ ...props }} />
 }
 
 export default Circle
