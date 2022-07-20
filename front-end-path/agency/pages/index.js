@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Intro from '../components/Intro'
+import Services from '../components/Services'
 import styles from '../styles/Home.module.css'
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Intro />
+      <Services />
     </div>
   )
 }
