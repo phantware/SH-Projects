@@ -31,3 +31,35 @@
   margin-top: 50px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+  .titl {
+    font-size: 50px;
+  }
+  .cardS {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .imageContainer {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .button {
+    margin: 20px 0px;
+  }
+  .cardL::before {
+    content: 'Projects';
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
