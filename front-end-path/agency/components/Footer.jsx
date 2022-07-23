@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.cardL}>
-        <div className={styles.title}>AGENCY</div>
-        <div className={styles.linkTitle}>
+        <h1 className={styles.title}>AGENCY</h1>
+        <h1 className={styles.linkTitle}>
           <a href='/contact' passHref>
-            <span>WORK WITH US</span>
-            <Image src='/img/ling.png' alt='' width='40px' height='40px' />
+            <span className={styles.linkText}>WORK WITH US</span>
+            <Image src='/img/link.png' alt='' width='40px' height='40px' />
           </a>
-        </div>
+        </h1>
       </div>
       <div className={styles.cardS}>
         <div className={styles.cardItem}>
