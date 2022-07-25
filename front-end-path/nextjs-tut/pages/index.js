@@ -15,6 +15,9 @@ const Home = () => {
       <Link href='/product'>
         <a>Products</a>
       </Link>
+      <Link href='/posts'>
+        <a>Posts</a>
+      </Link>
       <button onClick={onSubmit}>Place Order</button>
     </div>
   )
