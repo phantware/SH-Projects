@@ -29,7 +29,6 @@ npm install millify
 npm install nprogress
 npm install react-horizontal-scrolling-menu
 npm install react-icons
-
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
