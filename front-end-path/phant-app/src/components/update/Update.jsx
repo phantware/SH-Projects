@@ -1,11 +1,13 @@
 import React from 'react'
 import Warning from '../warning/Warning'
 import './update.css'
-// import { useState } from 'react'
+import { useState } from 'react'
 
 export default function Update() {
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  console.log('name', name)
+  console.log('email', email)
 
   return (
     <div className='update'>
@@ -28,7 +30,12 @@ export default function Update() {
             </div>
             <div className='formItem'>
               <label>Username</label>
-              <input className='formInput' type='text' placeholder='John' />
+              <input
+                className='formInput'
+                type='text'
+                placeholder='John'
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className='formItem'>
               <label>Email</label>
@@ -36,6 +43,7 @@ export default function Update() {
                 className='formInput'
                 type='text'
                 placeholder='john@gmail.com'
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className='formItem'>
