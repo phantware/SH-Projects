@@ -4,7 +4,7 @@ const userSlice = createSlice({
   name: 'user',
 
   initialState: {
-    name: 'jamiu',
+    name: 'Tunde',
     email: 'ismail.jamiu19@gmail.com',
   },
 
