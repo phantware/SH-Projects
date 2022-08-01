@@ -2,12 +2,19 @@ import React from 'react'
 import Warning from '../warning/Warning'
 import './update.css'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { update } from '../../redux/userSlice'
 
 export default function Update() {
-  const [name1, setName] = useState('')
-  const [email1, setEmail] = useState('')
-  const { name, email } = useSelector((state) => state.user)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const user = useSelector((state) => state.user)
+  const dispatch = useDispatch()
+
+  const handleUpdate = (e) => {
+    e.preventDefault()
+    dispatch(update({ name, email }))
+  }
 
   return (
     <div className='update'>
@@ -33,7 +40,7 @@ export default function Update() {
               <input
                 className='formInput'
                 type='text'
-                placeholder={name}
+                placeholder={user.name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
@@ -42,7 +49,7 @@ export default function Update() {
               <input
                 className='formInput'
                 type='text'
-                placeholder={email}
+                placeholder={user.email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -50,7 +57,9 @@ export default function Update() {
               <label>Password</label>
               <input className='formInput' type='password' />
             </div>
-            <button className='updateButton'>Update</button>
+            <button className='updateButton' onClick={handleUpdate}>
+              Update
+            </button>
           </form>
         </div>
       </div>
