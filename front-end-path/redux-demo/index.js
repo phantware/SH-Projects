@@ -17,3 +17,24 @@ const buyCake = () => {
     info: 'First redux action',
   }
 }
+
+// Reducer: (prevState, action) => newState
+
+// Initial State - Which is an object
+
+const initialState = {
+  numOfCakes: 10,
+}
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case BUY_CAKE:
+      return {
+        ...state,
+        numOfCakes: state.numOfCakes - 1,
+      }
+
+    default:
+      return state
+  }
+}
