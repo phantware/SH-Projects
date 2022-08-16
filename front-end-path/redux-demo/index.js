@@ -1,6 +1,9 @@
 const redux = require('redux')
 const createStore = redux.createStore
 
+//Combine reducers is used to combine multiple reducers into a single reducer which can then be passed to a creat store method
+const combineReducers = redux.combineReducers
+
 const BUY_CAKE = 'BUY_CAKE'
 const BUY_ICECREAM = 'BUY_ICECREAM'
 
@@ -85,8 +88,13 @@ const iceCreamReducer = (state = initialIceCreamState, action) => {
   }
 }
 
+//We created a rootReducer for combining our reducers
+const rootReducer = combineReducers({
+  cake: cakeReducer,
+  iceCream: iceCreamReducer,
+})
 // This si our store
-const store = createStore(reducer)
+const store = createStore(rootReducer)
 
 // This is our dispatcher
 console.log('initialState', store.getState())
