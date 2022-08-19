@@ -16,6 +16,10 @@ import cartItems from './cart-items'
 
 //store.getState() -  This is used to get state from the store
 
+//dispatch method - send actions to the store
+// actions (objects) - MUST HAVE TYPE PROPERTY - what kind of action
+// DON'T MUTATE THE STATE - redux built on IMMUTABILITY (copy)
+
 import { createStore } from 'redux'
 
 const initialState = {
@@ -23,10 +27,17 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
+  if (action.type === 'DECREASE') {
+    return { count: state.count - 1 }
+  }
   console.log({ state, action })
   return state
 }
 const store = createStore(reducer)
+store.dispatch({ type: 'DECREASE' })
+store.dispatch({ type: 'DECREASE' })
+store.dispatch({ type: 'DECREASE' })
+
 console.log(store.getState())
 
 function App() {
