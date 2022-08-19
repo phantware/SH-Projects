@@ -5,6 +5,7 @@ import CartContainer from './components/CartContainer'
 // items
 import cartItems from './cart-items'
 import { DECREASE, INCREASE } from './actions'
+import reducer from './reducer'
 
 // redux stuff
 
@@ -23,22 +24,6 @@ import { DECREASE, INCREASE } from './actions'
 
 import { createStore } from 'redux'
 
-const initialState = {
-  count: 10,
-  name: 'john',
-}
-
-const reducer = (state = initialState, action) => {
-  if (action.type === DECREASE) {
-    return { ...state, count: state.count - 1 }
-  }
-  if (action.type === INCREASE) {
-    return { ...state, count: state.count + 1 }
-  }
-
-  console.log({ state, action })
-  return state
-}
 const store = createStore(reducer)
 store.dispatch({ type: DECREASE })
 store.dispatch({ type: INCREASE })
