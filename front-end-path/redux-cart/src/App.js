@@ -30,13 +30,19 @@ const reducer = (state = initialState, action) => {
   if (action.type === 'DECREASE') {
     return { count: state.count - 1 }
   }
+  if (action.type === 'INCREASE') {
+    return { count: state.count + 1 }
+  }
+  if (action.type === 'RESET') {
+    return { count: 0 }
+  }
   console.log({ state, action })
   return state
 }
 const store = createStore(reducer)
 store.dispatch({ type: 'DECREASE' })
-store.dispatch({ type: 'DECREASE' })
-store.dispatch({ type: 'DECREASE' })
+store.dispatch({ type: 'RESET' })
+store.dispatch({ type: 'INCREASE' })
 
 console.log(store.getState())
 
