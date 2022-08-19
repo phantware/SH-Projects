@@ -14,10 +14,12 @@ import cartItems from './cart-items'
 // reducer - return updated or old state
 // Store - stores data, think of state
 
+//store.getState() -  This is used to get state from the store
+
 import { createStore } from 'redux'
 
 const initialState = {
-  count: 0,
+  count: 10,
 }
 
 const reducer = (state = initialState, action) => {
@@ -25,13 +27,14 @@ const reducer = (state = initialState, action) => {
   return state
 }
 const store = createStore(reducer)
+console.log(store.getState())
 
 function App() {
   // cart setup
 
   return (
     <main>
-      <Navbar />
+      <Navbar cart={store.getState()} />
       <CartContainer cart={cartItems} />
     </main>
   )
