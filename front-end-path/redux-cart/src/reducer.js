@@ -1,7 +1,16 @@
-import { DECREASE, INCREASE } from './actions'
+import { DECREASE, INCREASE, CLEAR_CART } from './actions'
 
 const reducer = (state, action) => {
-  return state
+  switch (action.type) {
+    case CLEAR_CART: {
+      return {
+        ...state,
+        cart: [],
+      }
+    }
+    default:
+      return state
+  }
 }
 
 export default reducer
