@@ -2,11 +2,11 @@ import React from 'react'
 // components
 import Navbar from './components/Navbar'
 import CartContainer from './components/CartContainer'
+import { Provider } from 'react-redux'
 // items
 import cartItems from './cart-items'
 import reducer from './reducer'
 import { createStore } from 'redux'
-import { Provider } from 'react-redux'
 
 const initialState = {
   cart: cartItems,

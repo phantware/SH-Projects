@@ -13,6 +13,7 @@ const reducer = (state, action) => {
   if (action.type === REMOVE) {
     console.log('you removed amount')
   }
+  return state
 }
 export default reducer
 
