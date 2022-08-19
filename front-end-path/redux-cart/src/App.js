@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import CartContainer from './components/CartContainer'
 // items
 import cartItems from './cart-items'
+import { DECREASE, INCREASE } from './actions'
 
 // redux stuff
 
@@ -28,27 +29,19 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-  if (action.type === 'DECREASE') {
+  if (action.type === DECREASE) {
     return { ...state, count: state.count - 1 }
   }
-  if (action.type === 'INCREASE') {
+  if (action.type === INCREASE) {
     return { ...state, count: state.count + 1 }
   }
-  if (action.type === 'RESET') {
-    return { ...state, count: 0 }
-  }
-  if (action.type === 'CHANGE_NAME') {
-    return { ...state, name: 'tunde' }
-  }
+
   console.log({ state, action })
   return state
 }
 const store = createStore(reducer)
-store.dispatch({ type: 'DECREASE' })
-store.dispatch({ type: 'DECREASE' })
-store.dispatch({ type: 'RESET' })
-store.dispatch({ type: 'INCREASE' })
-store.dispatch({ type: 'CHANGE_NAME' })
+store.dispatch({ type: DECREASE })
+store.dispatch({ type: INCREASE })
 
 console.log(store.getState())
 
