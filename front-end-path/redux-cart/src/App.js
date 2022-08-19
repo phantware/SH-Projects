@@ -6,6 +6,7 @@ import CartContainer from './components/CartContainer'
 import cartItems from './cart-items'
 import reducer from './reducer'
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 const initialState = {
   cart: cartItems,
@@ -27,16 +28,18 @@ const initialState = {
 // actions (objects) - MUST HAVE TYPE PROPERTY - what kind of action
 // DON'T MUTATE THE STATE - redux built on IMMUTABILITY (copy)
 
+//react-redux - Provider - wraps our app, connect - used in components
+
 const store = createStore(reducer, initialState)
 
 function App() {
   // cart setup
 
   return (
-    <main>
+    <Provider store={store}>
       <Navbar />
       <CartContainer cart={cartItems} />
-    </main>
+    </Provider>
   )
 }
 
