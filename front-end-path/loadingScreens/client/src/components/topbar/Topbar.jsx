@@ -18,11 +18,11 @@ const Topbar = () => {
           <Mic />
         </div>
       </div>
-
       <div className='topRight'>
         <VideoCall className='topIcon' />
         <Apps className='topIcon' />
         <Notifications className='topIcon' />
+        <img className='topImg' alt='' />
       </div>
     </div>
   )
