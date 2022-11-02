@@ -1,9 +1,9 @@
-import React from 'react'
+import './feed.css'
 import Post from '../post/Post'
 
 const Feed = () => {
   return (
-    <div>
+    <div className='feed'>
       <Post />
     </div>
   )
