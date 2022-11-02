@@ -7,7 +7,7 @@ const Topbar = () => {
     <div className='topbar'>
       <div className='topLeft'>
         <img className='logo' src='https://i.ibb.co/KDtnJVY/logo.png' alt='' />
-        <span className='logoText'>LamaTube</span>
+        <span className='logoText'>PhantTube</span>
       </div>
       <div className='topCenter'>
         <div className='topSearch'>

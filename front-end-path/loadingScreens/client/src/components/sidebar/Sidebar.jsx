@@ -13,7 +13,6 @@ const Sidebar = () => {
     <div className='sidebar'>
       <div className='sidebarWrapper'>
         <Menu />
-
         <div className='sidebarItem active'>
           <Home />
           <span>Home</span>
