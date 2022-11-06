@@ -2,7 +2,7 @@ import React from 'react'
 import './topbar.css'
 import { Mic, Search, VideoCall, Apps, Notifications } from '@material-ui/icons'
 
-const Topbar = () => {
+const Topbar = ({ isLoading, user }) => {
   return (
     <div className='topbar'>
       <div className='topLeft'>
@@ -22,7 +22,7 @@ const Topbar = () => {
         <VideoCall className='topIcon' />
         <Apps className='topIcon' />
         <Notifications className='topIcon' />
-        <img className='topImg' alt='' />
+        <img className='topImg' src={user.avatar} alt='' />
       </div>
     </div>
   )
