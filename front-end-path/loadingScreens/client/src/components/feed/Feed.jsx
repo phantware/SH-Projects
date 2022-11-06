@@ -20,12 +20,13 @@ const Feed = () => {
       }
     }
     getVideos()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <div className='feed'>
       {isLoading ? (
-        <Skeleton type='feed' />
+        <Skeleton type='circle' />
       ) : (
         videos.map((video) => <Post video={video} />)
       )}
