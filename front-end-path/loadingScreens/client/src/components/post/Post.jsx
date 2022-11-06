@@ -1,26 +1,20 @@
 import './post.css'
 
-const Post = () => {
+const Post = ({ video }) => {
   return (
     <div className='post'>
       <div className='postImgContainer'>
-        <img
-          src='https://i.ibb.co/KDtnJVY/logo.png'
-          alt=''
-          className='postImg'
-        />
-        <span className='postDuration'>10:30</span>
+        <img src={video.img} alt='' className='postImg' />
+        <span className='postDuration'>{video.duration}</span>
       </div>
       <div className='postInfoContainer'>
-        <img
-          className='postAvatar'
-          src='https://i.ibb.co/KDtnJVY/logo.png'
-          alt=''
-        />
+        <img className='postAvatar' src={video.channel.avatar} alt='' />
         <div className='postInfo'>
-          <span className='postTitle'>Video Title</span>
-          <span className='postChannel'>Video name</span>
-          <span className='postDetail'>5k views • 11/02/2022</span>
+          <span className='postTitle'>{video.title}</span>
+          <span className='postChannel'>{video.channel.name}</span>
+          <span className='postDetail'>
+            {video.views} views • {video.date}
+          </span>
         </div>
       </div>
     </div>
