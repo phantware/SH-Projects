@@ -2,6 +2,7 @@ import './feed.css'
 import Post from '../post/Post'
 import axiosInstance from '../../utils/axiosInstance'
 import { useState, useEffect } from 'react'
+import Skeleton from '../skeleton/Skeleton'
 
 const Feed = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -13,6 +14,7 @@ const Feed = () => {
       try {
         const res = await axiosInstance.get('/api/videos/1')
         setVideos(res.data)
+        isLoading(false)
       } catch (err) {
         setIsLoading(false)
       }
@@ -22,9 +24,11 @@ const Feed = () => {
 
   return (
     <div className='feed'>
-      {videos.map((video) => (
-        <Post video={video} />
-      ))}
+      {isLoading ? (
+        <Skeleton type='feed' />
+      ) : (
+        videos.map((video) => <Post video={video} />)
+      )}
     </div>
   )
 }
