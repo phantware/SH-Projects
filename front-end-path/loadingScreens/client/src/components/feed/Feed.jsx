@@ -20,7 +20,6 @@ const Feed = () => {
     getVideos()
   }, [])
 
-  console.log('videos', videos)
   return (
     <div className='feed'>
       {videos.map((video) => (
