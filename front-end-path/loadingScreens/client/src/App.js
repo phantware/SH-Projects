@@ -15,6 +15,7 @@ function App() {
       try {
         const res = await axiosInstance.get('/api/user/1')
         setUser(res.data)
+        setIsLoading(false)
       } catch (err) {
         setIsLoading(false)
       }

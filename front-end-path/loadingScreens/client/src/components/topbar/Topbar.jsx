@@ -1,6 +1,7 @@
 import React from 'react'
 import './topbar.css'
 import { Mic, Search, VideoCall, Apps, Notifications } from '@material-ui/icons'
+import Skeleton from '../skeleton/Skeleton'
 
 const Topbar = ({ isLoading, user }) => {
   return (
@@ -18,12 +19,16 @@ const Topbar = ({ isLoading, user }) => {
           <Mic />
         </div>
       </div>
-      <div className='topRight'>
-        <VideoCall className='topIcon' />
-        <Apps className='topIcon' />
-        <Notifications className='topIcon' />
-        <img className='topImg' src={user.avatar} alt='' />
-      </div>
+      {isLoading ? (
+        <Skeleton type='top' />
+      ) : (
+        <div className='topRight'>
+          <VideoCall className='topIcon' />
+          <Apps className='topIcon' />
+          <Notifications className='topIcon' />
+          <img className='topImg' src={user.avatar} alt='' />
+        </div>
+      )}
     </div>
   )
 }
