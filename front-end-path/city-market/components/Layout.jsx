@@ -13,21 +13,15 @@ const Layout = ({ children }) => {
       </Head>
       <AppBar position='static' className={classes.navbar}>
         <Toolbar>
-          <NextLink href='/' passHref>
-            <Link>
-              <Typography className={classes.brand}>City Market</Typography>
-            </Link>
+          <NextLink href='/'>
+            <Typography className={classes.brand}>City Market</Typography>
           </NextLink>
           <div className={classes.grow}></div>
           <div>
-            <NextLink href='/cart' passHref>
-              <Link>Cart</Link>
-            </NextLink>
+            <NextLink href='/cart'>Cart</NextLink>
           </div>
           <div>
-            <NextLink href='/login' passHref>
-              <Link>Login</Link>
-            </NextLink>
+            <NextLink href='/login'>Login</NextLink>
           </div>
         </Toolbar>
       </AppBar>
