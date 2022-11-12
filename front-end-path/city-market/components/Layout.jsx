@@ -15,8 +15,8 @@ const Layout = ({ children }) => {
           <Typography>City Market</Typography>
         </Toolbar>
       </AppBar>
-      <Container>{children}</Container>
-      <footer>
+      <Container className={classes.main}>{children}</Container>
+      <footer className={classes.footer}>
         <Typography>All rights reserved. City Market.</Typography>
       </footer>
     </div>
