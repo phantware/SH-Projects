@@ -3,7 +3,7 @@ import { createContext, useReducer } from 'react'
 export const Store = createContext()
 
 const initialState = {
-  darkMode: false,
+  darkMode: true,
 }
 
 function reducer(state, action) {
@@ -11,7 +11,7 @@ function reducer(state, action) {
     case 'DARK_MODE_ON':
       return {
         ...state,
-        darkMode: true,
+        darkMode: false,
       }
     case 'DARK_MODE_OFF':
       return {

@@ -1,20 +1,22 @@
 import {
   AppBar,
   Container,
-  createMuiTheme,
+  createTheme,
   CssBaseline,
-  Link,
   ThemeProvider,
   Toolbar,
   Typography,
 } from '@material-ui/core'
 import Head from 'next/head'
-import React from 'react'
+import React, { useContext } from 'react'
 import useStyles from '../utils/styles'
 import NextLink from 'next/link'
+import { Store } from '../utils/Store'
 
 const Layout = ({ children, title, description }) => {
-  const theme = createMuiTheme({
+  const { state, dispatch } = useContext(Store)
+  const { darkMode } = state
+  const theme = createTheme({
     typography: {
       h1: {
         fontSize: '1.6rem',
@@ -27,7 +29,7 @@ const Layout = ({ children, title, description }) => {
         margin: '1rem 0',
       },
       palette: {
-        type: 'light',
+        type: darkMode ? 'dark' : 'light',
         primary: {
           main: '#f0c000',
         },
