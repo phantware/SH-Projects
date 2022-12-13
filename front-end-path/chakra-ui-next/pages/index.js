@@ -12,7 +12,7 @@ export default function Home() {
           <DarkModeSwitch />
           <Text>Home</Text>
         </Flex>
-        <Heading as='h1' size='2xl'>
+        <Heading as='h1' size='2xl' fontWeight='normal'>
           Hello World
         </Heading>
         <Text mt={4}>This is my first Chakra UI encounter</Text>
