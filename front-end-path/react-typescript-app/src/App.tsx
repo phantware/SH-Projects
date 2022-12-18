@@ -6,6 +6,7 @@ import Oscar from './components/Oscar'
 import Person from './components/Person'
 import PersonList from './components/PersonList'
 import Status from './components/Status'
+import Input from './input'
 
 function App() {
   const personName = {
@@ -42,6 +43,7 @@ function App() {
           console.log('clicked', event, id)
         }}
       />
+      <Input value='' handleChange={(event) => console.log(event)} />
     </div>
   )
 }
