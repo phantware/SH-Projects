@@ -1,9 +1,7 @@
 import React from 'react'
+import { Name } from './Person.types'
 type PersonListProps = {
-  names: {
-    first: string
-    second: string
-  }[]
+  names: Name[]
 }
 
 const PersonList = (props: PersonListProps) => {
@@ -12,7 +10,7 @@ const PersonList = (props: PersonListProps) => {
       {props.names.map((name, i) => {
         return (
           <h2 key={i}>
-            {name.first} {name.second}
+            {name.firstName} {name.secondName}
           </h2>
         )
       })}

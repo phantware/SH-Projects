@@ -17,16 +17,16 @@ function App() {
 
   const nameList = [
     {
-      first: 'Ismail',
-      second: 'Jamiu',
+      firstName: 'Ismail',
+      secondName: 'Jamiu',
     },
     {
-      first: 'Ismail',
-      second: 'Ridwan',
+      firstName: 'Ismail',
+      secondName: 'Ridwan',
     },
     {
-      first: 'Ismail',
-      second: 'Sammuel',
+      firstName: 'Ismail',
+      secondName: 'Sammuel',
     },
   ]
   return (

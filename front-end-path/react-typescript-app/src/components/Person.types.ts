@@ -1,6 +1,8 @@
+export type Name = {
+  firstName: String
+  secondName: String
+}
+
 export type PersonProps = {
-  name: {
-    firstName: String
-    secondName: String
-  }
+  name: Name
 }
