@@ -38,8 +38,8 @@ function App() {
         <Heading>Oscar goes to school</Heading>
       </Oscar>
       <Button
-        handleClick={(event) => {
-          console.log('clicked', event)
+        handleClick={(event, id) => {
+          console.log('clicked', event, id)
         }}
       />
     </div>
