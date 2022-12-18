@@ -1,4 +1,5 @@
 import './App.css'
+import Button from './components/Button'
 import Greet from './components/Greet'
 import Heading from './components/Heading'
 import Oscar from './components/Oscar'
@@ -36,6 +37,11 @@ function App() {
       <Oscar>
         <Heading>Oscar goes to school</Heading>
       </Oscar>
+      <Button
+        handleClick={() => {
+          console.log('clicked')
+        }}
+      />
     </div>
   )
 }
