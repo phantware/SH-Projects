@@ -1,5 +1,5 @@
 import { Container, Flex, VStack } from '@chakra-ui/react'
-import Cart from '../src/sections/Cart'
+import Cart from '../src/sections/cart'
 import Details from '../src/sections/details'
 
 export default function Home() {
